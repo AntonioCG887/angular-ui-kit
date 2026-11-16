@@ -5,7 +5,7 @@
     height: calc(100% - 2rem);    
     flex-direction: column;
     padding: 1rem;
-    background: var(--sidebar-bg);
+    background: var(--bg-surface);
     border-right: 1px solid var(--border-primary);
 }
 

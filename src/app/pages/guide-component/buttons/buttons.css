@@ -1,0 +1,81 @@
+
+/* button css */
+
+.component-content > button {
+    border-radius: 20px;
+    border: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.primary {
+    background: var(--text-accent);
+    padding: 0.8rem 1.6rem;
+    font-weight: bold;
+}
+
+.secondary {
+    padding: 0.8rem 1.6rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary) !important;
+    background: var(--bg-surface);
+}
+
+.outline {
+    background: var(--bg-base);
+    padding: 0.8rem 1.6rem;
+    color: var(--text-accent);
+    border: 2px solid var(--text-accent) !important;
+}
+
+.danger {
+    padding: 0.8rem 1.6rem;
+    background: rgb(133, 24, 24);
+    color: rgb(209, 144, 144);
+    font-weight: bold;
+}
+
+.success {
+    padding: 0.8rem 1.6rem;
+    background: rgb(105, 133, 80);
+    color: rgb(144, 209, 144);
+    font-weight: bold;
+
+}
+
+.warning {
+    padding: 0.8rem 1.6rem;
+    background: rgb(133, 123, 80);
+    color: rgb(209, 199, 144);
+    font-weight: bold;
+}
+
+.ghost {
+    padding: 0.8rem 1.6rem;
+    background: var(--bg-base);
+    border: 1px solid var(--border-primary) !important;
+    color: var(--text-secondary);
+}
+
+.small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem !important;
+    margin-right: 1rem;
+}
+
+.large {
+    padding: 0.7rem 2rem;
+    font-size: 1.7rem !important;
+}
+
+.disabled{
+    background: var(--bg-disabled);
+    padding: 0.8rem 1.6rem;
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+.focus{
+    box-shadow: 0px 0px 8px var(--text-accent);
+}
+
