@@ -1,13 +1,13 @@
 import { Component, input, ViewEncapsulation } from '@angular/core';
+import { CssEditor } from '../css-editor/css-editor';
 
 @Component({
   selector: 'section [app-customizer]',
-  imports: [],
+  imports: [CssEditor],
   templateUrl: './customizer.html',
   styleUrl: './customizer.css',
   encapsulation: ViewEncapsulation.None
 })
 export class Customizer {
-  title = input.required<string>();
-  subtitle = input.required<string>();
+  title = input.required<string>();  
 }

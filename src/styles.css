@@ -60,30 +60,21 @@ h3 {
 .main-content>section {
     padding: 1rem;
     width: 50%;
-    background: var(--bg-surface);
-    box-shadow: 0px 0px 4px var(--text-accent);
-    border: 1px solid var(--border-primary);
+    background: var(--bg-surface);    
+    border-left: 1px solid var(--border-primary);
 }
 
 :root {
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-
     --border-primary: #292b36;
-
-
     --bg-base: #0e0f15;
-
     --bg-accent: #2d2311;
-
-
     --text-primary: #eeeeee;
     --text-secondary: #c6c6c6;
     --text-muted: #999999;
     --text-accent: #f5bd3f;
-
     --bg-surface: #11131a;
-
+    --bg-surface-elevated:#1b1c24;
     --bg-disabled:#212431;
-
 }

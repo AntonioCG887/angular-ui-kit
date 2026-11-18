@@ -1,0 +1,30 @@
+<div class="css-editor">
+
+    <div class="css-editor__header">
+        <div class="css-editor__title">
+            <img class="css-editor__icon" src="./assets/icons/code-solid-full.svg" alt="code icon"/>
+            <h3>Generated CSS</h3>
+        </div>
+
+        <div class="css-editor__actions">
+            <span class="css-editor__language">CSS</span>
+
+            <button class="css-editor__copy" (click)="copyCSS()" type="button">
+                <img src="./assets/icons/copy-regular-full.svg" alt="copy icon" />
+                Copy
+            </button>
+        </div>
+    </div>
+
+    <div class="css-editor__body">
+        <textarea class="css-editor__textarea" [value]="cssCode()" readonly spellcheck="false"
+            aria-label="Generated CSS code">
+    </textarea>
+    </div>
+
+    <div class="css-editor__footer">
+        <span>CSS generated automatically</span>
+        <span>{{ cssCode().split('\n').length }} lines</span>
+    </div>
+
+</div>

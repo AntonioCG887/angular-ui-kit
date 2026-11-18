@@ -1,0 +1,118 @@
+.customizer__header {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.customizer__header h2 {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.customizer>div {
+    margin: 1rem 0;
+}
+
+.customizer button {
+    margin: 0.5rem 0;
+}
+
+.customizer__header img{
+    width: 30px;
+    border-radius: 10px;
+    background: radial-gradient(100% 100% at 50% 50%, rgba(206, 160, 10, 0.342), transparent 80%) var(--bg-base);
+}
+
+.customizer__input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.7rem;
+}
+
+.customizer__color-pick{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;    
+}
+
+.customizer__color-pick > span{
+    min-width: 140px;
+}
+
+.customizer__color-pick > input[type=color]{
+    width: 25px;
+    height: 25px;    
+    outline: none;
+    background: none;
+    border: none;    
+}
+
+.customizer__color-pick img {
+    width: 30px;    
+    padding: 7px;
+}
+
+.customizer__color-pick > button{
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-surface-elevated);
+}
+
+.customizer__color-pick:last-child{
+    border: 1px solid var(--border-primary);
+}
+
+input[type="range"] {
+    width: 70%;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: var(--bg-surface-elevated);
+    border-radius: 15px;
+}
+
+/* chrome/edge/safari */
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--text-accent);
+    border: none;
+    border-radius: 50%;    
+}
+
+/* firefox */
+
+input[type="range"]::-moz-range-thumb {
+    
+    width: 14px;
+    height: 14px;
+    background: var(--text-accent);
+    border: none;
+    border-radius: 50%;
+}
+/* end firefox */
+
+input[type="text"] {
+    width: 120px;
+    outline: none;
+    border-radius: 7px;
+    color: var(--text-secondary);
+    padding: 0.7rem;
+    height: 25px;
+    border: 1.5px solid var(--border-primary);
+    background: var(--bg-surface);
+    transition: width 0.4s ease-in-out ;
+}
+
+input[type="text"]:focus {
+    background-color: var(--bg-surface-elevated);    
+    width: 160px;
+}

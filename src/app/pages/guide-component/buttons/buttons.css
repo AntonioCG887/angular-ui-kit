@@ -1,7 +1,7 @@
 
 /* button css */
 
-.component-content > button {
+.component-content > button, .customizer button{
     border-radius: 20px;
     border: none;
     margin-right: 1rem;

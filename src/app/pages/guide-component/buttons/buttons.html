@@ -1,7 +1,7 @@
 <section class="main-content">
 
     <app-component-examples componentDesc="Essential for user interactions" componentType="Buttons">
-        
+
 
         <section class="component-content">
             <h2>Variants</h2>
@@ -30,10 +30,58 @@
             <button class="outline focus">Focus</button>
         </section>
 
+        <section class="component-content">
+            <h2>Results in real time</h2>
+            
+            <button class="primary">Normal</button>
+            
+        </section>
+
     </app-component-examples>
 
-    <section app-customizer class="customizer" title="Customize your button" subtitle="Adjust the properties and see how it looks in real time">
-
+    <section app-customizer class="customizer" title="Customize your button">
+        <div>
+            <p>Variant</p>
+            <button class="primary">Primary</button>
+            <button class="secondary">Secondary</button>
+            <button class="outline">Outline</button>
+            <button class="danger">Danger</button>
+            <button class="success">Success</button>
+            <button class="warning">Warning</button>
+            <button class="ghost">Ghost</button>
+        </div>
+        <div>
+            <p>Size</p>
+            <button class="primary small">Small</button>
+            <button class="primary medium">Medium</button>
+            <button class="primary large">Large</button>
+        </div>
+        <div>
+            <p>Border Radius</p>
+            <div class="customizer__input-group">
+                <input type="text" />
+                <input type="range" min="0" max="100"  class="slider" id="radiusRange">
+            </div>                
+        </div>
+        <div>
+            <p>Padding</p>
+            <div class="customizer__input-group">
+                <input type="text" />
+                <input type="range" min="0" max="100"  class="slider" id="radiusRange">
+            </div>
+        </div>
+        <div class="customizer__color-pick">
+            <span>Text Color</span>
+            <input type="color" />
+            <input type="text" />
+            <button><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon"/></button>
+        </div>
+        <div class="customizer__color-pick">
+            <span>Background Color</span>
+            <input type="color"/>
+            <input type="text" />
+            <button><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon"/></button>
+        </div>                        
     </section>
 
 </section>

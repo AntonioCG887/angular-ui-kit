@@ -1,0 +1,98 @@
+.css-editor {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+
+}
+
+/* header */
+
+.css-editor__header {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.9rem;
+    background: var(--bg-surface-elevated);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.css-editor__title,
+.css-editor__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.css-editor__title {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.css-editor__icon {
+    width: 30px;
+    border-radius: 10px;
+    background: radial-gradient(100% 100% at 50% 50%, rgba(206, 160, 10, 0.342), transparent 80%) var(--bg-base);
+}
+
+.css-editor__language {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
+}
+
+.css-editor__copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.4rem;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    background: #222531;
+    border: 1px solid var(--border-primary);
+    cursor: pointer;
+    transition: all 380ms ease;
+}
+
+.css-editor__copy:hover {
+    color: var(--text-accent);
+    border-color: rgba(245, 189, 63, 0.5);
+    background: rgba(245, 189, 63, 0.07);
+}
+
+/* TEXTAREA */
+
+.css-editor__body {
+    padding: 0.8rem;
+    background: var(--bg-base);
+}
+
+.css-editor__textarea {
+    display: block;
+    width: 100%;
+    min-height: 200px;
+    max-height: 450px;
+    padding: 0.5rem;
+    resize: vertical;
+    overflow: auto;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-muted);    
+    font-size: 0.8rem;
+    line-height: 1.8;        
+}
+
+/* footer */
+.css-editor__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    background: var(--bg-surface-elevated);
+    border-top: 1px solid var(--border-primary);
+}

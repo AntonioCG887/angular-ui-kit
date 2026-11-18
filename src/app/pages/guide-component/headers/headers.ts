@@ -3,6 +3,7 @@ import { ComponentExamples } from '../../../components/component-examples/compon
 import { Customizer } from '../../../components/customizer/customizer';
 
 
+
 @Component({
   selector: 'app-headers',
   imports: [ComponentExamples, Customizer],
