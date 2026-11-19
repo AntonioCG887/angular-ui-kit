@@ -38,13 +38,13 @@
     <section app-customizer class="customizer" title="Customize your button" defaultStyles={{selectedStyle()}}>
         <div>
             <p>Variant</p>
-            <button class="primary" (click)="setStyle(1)">Primary</button>
-            <button class="secondary" (click)="setStyle(2)">Secondary</button>
-            <button class="outline" (click)="setStyle(3)">Outline</button>
-            <button class="danger" (click)="setStyle(4)">Danger</button>
-            <button class="success" (click)="setStyle(5)">Success</button>
-            <button class="warning" (click)="setStyle(6)">Warning</button>
-            <button class="ghost" (click)="setStyle(7)">Ghost</button>
+            <button class="primary" (click)="setStyle(0)">Primary</button>
+            <button class="secondary" (click)="setStyle(1)">Secondary</button>
+            <button class="outline" (click)="setStyle(2)">Outline</button>
+            <button class="danger" (click)="setStyle(3)">Danger</button>
+            <button class="success" (click)="setStyle(4)">Success</button>
+            <button class="warning" (click)="setStyle(5)">Warning</button>
+            <button class="ghost" (click)="setStyle(6)">Ghost</button>
         </div>
         <div>
             <p>Size</p>
@@ -57,7 +57,7 @@
             <div class="customizer__input-group">
                 <input type="number"  value="{{currentRadius()}}"  [(ngModel)]="currentRadius"/>
                 <input type="range" min="0" max="100" step="1" value="{{currentRadius()}}" class="slider" id="radiusRange" [(ngModel)]="currentRadius"  />
-                <button><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon" /></button>
+                <button (click)="resetPropertyToDefault('border-radius:')"><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon" /></button>
             </div>
         </div>
         <div>
@@ -65,20 +65,20 @@
             <div class="customizer__input-group">
                 <input type="number" value="{{currentPadding()}}" [(ngModel)]="currentPadding" />
                 <input type="range" min="0" max="100" step="1" value="{{currentPadding()}}"  class="slider" id="radiusRange" [(ngModel)]="currentPadding"/>
-                <button><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon" /></button>
+                <button (click)="resetPropertyToDefault('padding:')"><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon" /></button>
             </div>
         </div>
         <div class="customizer__color-pick">
             <span>Text Color</span>
-            <input type="color" />
-            <input type="text" />
-            <button><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon" /></button>
+            <input type="color"[(ngModel)]="textColor" />
+            <input type="text" [(ngModel)]="textColor"/>
+            <button (click)="resetPropertyToDefault('color:')"><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon" /></button>
         </div>
         <div class="customizer__color-pick">
             <span>Background Color</span>
-            <input type="color" />
-            <input type="text" />
-            <button><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon" /></button>
+            <input type="color" [(ngModel)]="bgColor" />
+            <input type="text" [(ngModel)]="bgColor" />
+            <button (click)="resetPropertyToDefault('background:')"><img src="./assets/icons/rotate-left-solid-full.svg" alt="reset icon" /></button>
         </div>
     </section>
 
