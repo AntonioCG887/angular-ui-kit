@@ -52,12 +52,12 @@
     border: none;    
 }
 
-.customizer__color-pick img {
+.customizer__color-pick img, .customizer__input-group img {
     width: 30px;    
     padding: 7px;
 }
 
-.customizer__color-pick > button{
+.customizer__color-pick > button, .customizer__input-group > button{
     width: 30px;
     height: 30px;
     background-color: var(--bg-surface-elevated);
@@ -100,7 +100,7 @@ input[type="range"]::-moz-range-thumb {
 }
 /* end firefox */
 
-input[type="text"] {
+input[type="text"],input[type="number"] {
     width: 120px;
     outline: none;
     border-radius: 7px;
@@ -112,7 +112,7 @@ input[type="text"] {
     transition: width 0.4s ease-in-out ;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,input[type="number"]:focus {
     background-color: var(--bg-surface-elevated);    
     width: 160px;
 }

@@ -10,8 +10,6 @@ body {
     color: var(--text-secondary);
 }
 
-
-
 nav,
 main,
 footer {
@@ -77,4 +75,8 @@ h3 {
     --bg-surface: #11131a;
     --bg-surface-elevated:#1b1c24;
     --bg-disabled:#212431;
+}
+
+button:hover{
+    cursor: pointer;
 }

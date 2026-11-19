@@ -2,7 +2,7 @@
 
     <div class="css-editor__header">
         <div class="css-editor__title">
-            <img class="css-editor__icon" src="./assets/icons/code-solid-full.svg" alt="code icon"/>
+            <img class="css-editor__icon" src="./assets/icons/code-solid-full.svg" alt="code icon" />
             <h3>Generated CSS</h3>
         </div>
 
@@ -24,7 +24,14 @@
 
     <div class="css-editor__footer">
         <span>CSS generated automatically</span>
-        <span>{{ cssCode().split('\n').length }} lines</span>
+        <span> 
+            @if (cssCode() === '') {
+                0
+            }@else{
+                {{ cssCode().split('\n').length }}
+            }
+            lines
+        </span>
     </div>
 
 </div>

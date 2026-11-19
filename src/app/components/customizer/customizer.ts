@@ -10,4 +10,5 @@ import { CssEditor } from '../css-editor/css-editor';
 })
 export class Customizer {
   title = input.required<string>();  
+  defaultStyles = input.required<string>();
 }

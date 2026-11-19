@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { signal } from '@angular/core';
 
 @Component({
@@ -8,16 +8,11 @@ import { signal } from '@angular/core';
   styleUrl: './css-editor.css',
 })
 export class CssEditor {
-  cssCode = signal(`
-  .ngui-button {
-    background: #D6A64F;
-    color: #171717;
-    padding: 10px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-    `.trim());
+
+  
+
+  cssCode = input.required<string>();
+    
 
   async copyCSS(): Promise<void> {
     try {
