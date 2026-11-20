@@ -9,16 +9,24 @@ import { signal } from '@angular/core';
 })
 export class CssEditor {
 
-  
 
+  cssTabOpened = signal<boolean>(true);
   cssCode = input.required<string>();
-    
+  htmlCode = input.required<string>();
 
-  async copyCSS(): Promise<void> {
+  async copyCSS(copyCss: boolean): Promise<void> {
     try {
-      await navigator.clipboard.writeText(this.cssCode());
+      if(copyCss)
+        await navigator.clipboard.writeText(this.cssCode());
+      else
+        await navigator.clipboard.writeText(this.htmlCode());
     } catch (error) {
-      console.error('Unable to copy CSS:', error);
+      console.error('Unable to copy:', error);
     }
+  }
+
+  changeTab(openCssTab:boolean){
+
+    this.cssTabOpened.set(openCssTab);
   }
 }

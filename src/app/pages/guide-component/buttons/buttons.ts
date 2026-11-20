@@ -82,20 +82,37 @@ export class Buttons {
 }`
   ]
 
+  cssClass = signal<string>("ngui-btn-primary");
+  htmlCode = computed(() => "<button class='" + this.cssClass() + "'> NGUI </button>");
+    
+  // Represents which variant from the variants array the user chose
   selectedVariant = signal<number>(0);
+
+  // CSS properties
   currentPadding = signal<number>(12);
   currentRadius = signal<number>(20);
   textColor = signal<string>("#000000");
   bgColor = signal<string>("#f5bd3f");
+
+  // Size
   selectedSize = signal<string>('m');
+
+  // CSS styles selected (and inline to apply the changes in real time)
   selectedStyle = signal<string>(this.variants[this.selectedVariant()]);
   selectedStyleInline = computed(() => this.selectedStyle().substring(this.selectedStyle().indexOf("{", 0) + 1, this.selectedStyle().length - 1).replace('\n', ''));
 
   setStyle(variant: number) {
     this.selectedVariant.set(variant);
     this.selectedStyle.set(this.variants[this.selectedVariant()]);
+
+    var cssClass = this.selectedStyle().substring(1,this.selectedStyle().indexOf(" "));
+    this.cssClass.set(cssClass);
+
+    // On this case we don't apply padding to the size change, 
+    // we only apply padding when other size is selected
     this.changeSize(this.selectedSize(), false);
 
+    // We get the hex value to override the font color and background color
     var cssProperty: string = this.extractCSSProperty(this.selectedStyle(), "background:");
     this.bgColor.set(cssProperty.substring(cssProperty.indexOf(":") + 1, cssProperty.length - 1).trim());
 
@@ -111,8 +128,7 @@ export class Buttons {
     // If the color/background was reset without changing it we don't need to change anything.
     if (currentColor !== variantDefaultProperty) {
 
-      switch (property) {
-        
+      switch (property) {                 
         case "color:":
           this.textColor.set(variantDefaultProperty.substring(variantDefaultProperty.indexOf(":") + 1, variantDefaultProperty.length - 1).trim());
           break;
@@ -189,14 +205,14 @@ export class Buttons {
 
     effect(() => {
       if (!this.textColor() || this.textColor() === "") {
-        this.textColor.set("#000000");
+        this.resetPropertyToDefault("color:");
       }
       this.selectedStyle.set(this.selectedStyle().replace(this.extractCSSProperty(this.selectedStyle(), "color:"), "color: " + this.textColor() + ";"));
     });
 
     effect(() => {
       if (!this.bgColor() || this.bgColor() === "") {
-        this.bgColor.set("#FFFFFF");
+        this.resetPropertyToDefault("background:");
       }
       this.selectedStyle.set(this.selectedStyle().replace(this.extractCSSProperty(this.selectedStyle(), "background:"), "background: " + this.bgColor() + ";"));
     });

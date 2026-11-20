@@ -7,9 +7,11 @@
         </div>
 
         <div class="css-editor__actions">
-            <span class="css-editor__language">CSS</span>
+            <button (click)="changeTab(true)" class="css-editor__language-tab"><span [class]="cssTabOpened() ? 'highlight' : 'css-editor__language'"  class="">CSS</span></button>
+            <button (click)="changeTab(false)" class="css-editor__language-tab"><span [class]="!cssTabOpened() ? 'highlight' : 'css-editor__language'">HTML</span></button>
 
-            <button class="css-editor__copy" (click)="copyCSS()" type="button">
+
+            <button class="css-editor__copy" (click)="copyCSS(cssTabOpened())" type="button">
                 <img src="./assets/icons/copy-regular-full.svg" alt="copy icon" />
                 Copy
             </button>
@@ -17,21 +19,41 @@
     </div>
 
     <div class="css-editor__body">
+
+        @if (cssTabOpened()) {
         <textarea class="css-editor__textarea" [value]="cssCode()" readonly spellcheck="false"
             aria-label="Generated CSS code">
-    </textarea>
+        </textarea>
+        }@else{
+        <textarea class="css-editor__textarea" [value]="htmlCode()" readonly spellcheck="false"
+            aria-label="Generated HTML code">
+        </textarea>
+        }
+
     </div>
 
     <div class="css-editor__footer">
+        @if (cssTabOpened()) {
         <span>CSS generated automatically</span>
-        <span> 
+        <span>
             @if (cssCode() === '') {
-                0
+            0
             }@else{
-                {{ cssCode().split('\n').length }}
+            {{ cssCode().split('\n').length }}
             }
             lines
         </span>
+        }@else {
+        <span>HTML generated automatically</span>
+        <span>
+            @if (htmlCode() === '') {
+            0
+            }@else{
+            {{ htmlCode().split('\n').length }}
+            }
+            lines
+        </span>
+        }
     </div>
 
 </div>

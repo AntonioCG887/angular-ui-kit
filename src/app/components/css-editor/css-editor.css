@@ -25,6 +25,20 @@
     gap: 0.7rem;
 }
 
+.css-editor__language-tab{
+    background: none;
+    border: none;    
+    
+}
+
+.css-editor__language-tab span{
+    transition: color 0.7s ease-in-out;
+}
+
+.css-editor__language-tab span:hover{
+    color: var(--text-accent);
+}
+
 .css-editor__title {
     color: var(--text-primary);
     font-size: 1rem;
